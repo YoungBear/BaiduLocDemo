@@ -49,7 +49,7 @@
         </service>
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="请输入KEY"/>  <!--http://lbsyun.baidu.com/apiconsole/key-->
+            android:value="eGG2kkrvdWVil5YRUurc6h7n5wU6vdEZ"/>  <!--http://lbsyun.baidu.com/apiconsole/key-->
 
         <!-- meta-data需要写在application中 -->
         <activity
