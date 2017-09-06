@@ -1,12 +1,5 @@
 package com.baidu.location.demo;
 
-import com.baidu.baidulocationdemo.R;
-import com.baidu.location.BDAbstractLocationListener;
-import com.baidu.location.BDLocation;
-import com.baidu.location.BDLocationListener;
-import com.baidu.location.Poi;
-import com.baidu.location.service.LocationService;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
@@ -14,6 +7,12 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.baidu.baidulocationdemo.R;
+import com.baidu.location.BDAbstractLocationListener;
+import com.baidu.location.BDLocation;
+import com.baidu.location.Poi;
+import com.baidu.location.service.LocationService;
 
 /***
  * 单点定位示例，用来展示基本的定位结果，配置在LocationService.java中
@@ -139,6 +138,8 @@ public class LocationActivity extends Activity {
 				sb.append(location.getLatitude());
 				sb.append("\nlontitude : ");// 经度
 				sb.append(location.getLongitude());
+				sb.append("\naltitude : ");//高度
+				sb.append(location.getAltitude());
 				sb.append("\nradius : ");// 半径
 				sb.append(location.getRadius());
 				sb.append("\nCountryCode : ");// 国家码
