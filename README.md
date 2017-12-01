@@ -47,7 +47,7 @@ BaiduLoc_AndroidSDK_v7.2_All\BaiduLoc_AndroidSDK_v7.2_Demo\android_studio\BaiduL
 https://github.com/YoungBear/BaiduLocDemo
 
 
-  [1]: https://github.com/YoungBear/BaiduLocDemo/blob/master/pngs/code_directory.png
-  [2]: https://github.com/YoungBear/BaiduLocDemo/blob/master/pngs/get_debug_sha1.png
-  [3]: https://github.com/YoungBear/BaiduLocDemo/blob/master/pngs/AK_Manifest.png
-  [4]: https://github.com/YoungBear/BaiduLocDemo/blob/master/pngs/use_debug_keystore_in_repo.png
+  [1]: http://img.blog.csdn.net/20171201140020353?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTmV4dF9TZWNvbmQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast
+  [2]: http://img.blog.csdn.net/20171201140133572?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTmV4dF9TZWNvbmQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast
+  [3]: http://img.blog.csdn.net/20171201140236046?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTmV4dF9TZWNvbmQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast
+  [4]: http://img.blog.csdn.net/20171201140316164?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTmV4dF9TZWNvbmQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast
