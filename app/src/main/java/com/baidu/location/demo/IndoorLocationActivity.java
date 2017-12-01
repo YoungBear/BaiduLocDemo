@@ -194,7 +194,11 @@ public class IndoorLocationActivity extends Activity {
                 LatLng ll = new LatLng(location.getLatitude(), location.getLongitude());
                 MapStatus.Builder builder = new MapStatus.Builder();
                 builder.target(ll).zoom(18.0f);
-                mBaiduMap.animateMapStatus(MapStatusUpdateFactory.newMapStatus(builder.build()));
+                /**
+                 * BaiduMap 4.0-4.5.2，animateMapStatus有bug，使用setMapStatus代替
+                 */
+                mBaiduMap.setMapStatus(MapStatusUpdateFactory.newMapStatus(builder.build()));
+                //mBaiduMap.animateMapStatus(MapStatusUpdateFactory.newMapStatus(builder.build()));
             }
         }
 
