@@ -1,7 +1,6 @@
 package com.baidu.location.demo;
 
 
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
@@ -13,15 +12,11 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 
-import baidumapsdk.demo.indoorview.BaseStripAdapter;
-import baidumapsdk.demo.indoorview.StripListView;
-
 import com.baidu.baidulocationdemo.R;
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
-
 import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.BitmapDescriptor;
 import com.baidu.mapapi.map.MapBaseIndoorMapInfo;
@@ -32,6 +27,9 @@ import com.baidu.mapapi.map.MyLocationConfiguration;
 import com.baidu.mapapi.map.MyLocationConfiguration.LocationMode;
 import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.model.LatLng;
+
+import baidumapsdk.demo.indoorview.BaseStripAdapter;
+import baidumapsdk.demo.indoorview.StripListView;
 
 /**
  * 此demo用来展示如何结合定位SDK实现室内定位，并使用MyLocationOverlay绘制定位位置
@@ -59,13 +57,13 @@ public class IndoorLocationActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
+
         mContext = this;
 
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         RelativeLayout layout = new RelativeLayout(this);
-        
+
         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View mainview = inflater.inflate(R.layout.activity_location, null);
         layout.addView(mainview);
@@ -138,7 +136,7 @@ public class IndoorLocationActivity extends Activity {
                 mMapBaseIndoorMapInfo = mapBaseIndoorMapInfo;
             }
         });
-        
+
     }
 
 
@@ -188,7 +186,7 @@ public class IndoorLocationActivity extends Activity {
             }
 
             MyLocationData locData = new MyLocationData.Builder().accuracy(location.getRadius())
-            // 此处设置开发者获取到的方向信息，顺时针0-360
+                    // 此处设置开发者获取到的方向信息，顺时针0-360
                     .direction(100).latitude(location.getLatitude()).longitude(location.getLongitude()).build();
             mBaiduMap.setMyLocationData(locData);
             if (isFirstLoc) {
@@ -202,9 +200,9 @@ public class IndoorLocationActivity extends Activity {
 
         public void onReceivePoi(BDLocation poiLocation) {
         }
-        
-        public void onConnectHotSpotMessage(String s, int i){
-        	
+
+        public void onConnectHotSpotMessage(String s, int i) {
+
         }
     }
 
