@@ -18,7 +18,7 @@ import java.util.List;
  */
 public class BaseStripAdapter extends BaseAdapter {
 
-	private LayoutInflater mInflater;
+    private LayoutInflater mInflater;
     private List<String> mFloorList = new ArrayList<String>();
     private int selectedPos;
     private Context mContext;
@@ -37,16 +37,16 @@ public class BaseStripAdapter extends BaseAdapter {
     public void setmFloorList(List<String> mFloorList) {
         this.mFloorList = mFloorList;
     }
-    
+
     public int getPosition(String floor) {
         int re = 0;
-        for(int i = 0; i < mFloorList.size(); i++) {
+        for (int i = 0; i < mFloorList.size(); i++) {
             if (floor.equals(mFloorList.get(i))) {
                 re = i;
                 break;
             }
         }
-        
+
         return re;
     }
 
@@ -54,14 +54,17 @@ public class BaseStripAdapter extends BaseAdapter {
         mFloorList = floorList;
     }
 
+    @Override
     public int getCount() {
         return mFloorList.size();
     }
 
+    @Override
     public Object getItem(int position) {
         return mFloorList.get(position);
     }
 
+    @Override
     public long getItemId(int position) {
         return position;
     }
@@ -70,6 +73,7 @@ public class BaseStripAdapter extends BaseAdapter {
         selectedPos = postion;
     }
 
+    @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         NoteViewHolder holder;
         if (convertView == null) {

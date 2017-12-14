@@ -38,7 +38,7 @@ public class IndoorLocationActivity extends Activity {
 
     // 定位相关
     LocationClient mLocClient;
-    public MyLocationListenner myListener = new MyLocationListenner();
+    public MyLocationListener myListener = new MyLocationListener();
     private LocationMode mCurrentMode;
     BitmapDescriptor mCurrentMarker;
 
@@ -78,19 +78,19 @@ public class IndoorLocationActivity extends Activity {
                     case NORMAL:
                         requestLocButton.setText("跟随");
                         mCurrentMode = LocationMode.FOLLOWING;
-                        mBaiduMap.setMyLocationConfigeration(new MyLocationConfiguration(mCurrentMode, true,
+                        mBaiduMap.setMyLocationConfiguration(new MyLocationConfiguration(mCurrentMode, true,
                                 mCurrentMarker));
                         break;
                     case COMPASS:
                         requestLocButton.setText("普通");
                         mCurrentMode = LocationMode.NORMAL;
-                        mBaiduMap.setMyLocationConfigeration(new MyLocationConfiguration(mCurrentMode, true,
+                        mBaiduMap.setMyLocationConfiguration(new MyLocationConfiguration(mCurrentMode, true,
                                 mCurrentMarker));
                         break;
                     case FOLLOWING:
                         requestLocButton.setText("罗盘");
                         mCurrentMode = LocationMode.COMPASS;
-                        mBaiduMap.setMyLocationConfigeration(new MyLocationConfiguration(mCurrentMode, true,
+                        mBaiduMap.setMyLocationConfiguration(new MyLocationConfiguration(mCurrentMode, true,
                                 mCurrentMarker));
                         break;
                     default:
@@ -144,7 +144,7 @@ public class IndoorLocationActivity extends Activity {
     /**
      * 定位SDK监听函数
      */
-    public class MyLocationListenner extends BDAbstractLocationListener {
+    public class MyLocationListener extends BDAbstractLocationListener {
 
         private String lastFloor = null;
 
