@@ -62,7 +62,6 @@ public class LocationActivity extends Activity {
                     }
                 }).start();
             }
-            //LocationResult.setText(str);
         } catch (Exception e) {
             e.printStackTrace();
         }

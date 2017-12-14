@@ -12,8 +12,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.baidu.baidulocationdemo.R;
+import com.baidu.location.BDAbstractLocationListener;
 import com.baidu.location.BDLocation;
-import com.baidu.location.BDLocationListener;
 import com.baidu.location.BDNotifyListener;
 import com.baidu.location.LocationClient;
 
@@ -71,10 +71,16 @@ public class NotifyActivity extends Activity {
         // TODO Auto-generated method stub
         super.onStop();
         mLocationClient.removeNotifyEvent(mNotifyLister);
-        mLocationClient = null;
-        mNotifyLister = null;
-        listener = null;
+        mLocationClient.unRegisterLocationListener(listener);
+        mLocationClient.stop();
+    }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mLocationClient.removeNotifyEvent(mNotifyLister);
+        mLocationClient.unRegisterLocationListener(listener);
+        mLocationClient.stop();
     }
 
     private Handler notifyHandler = new Handler() {
@@ -88,7 +94,7 @@ public class NotifyActivity extends Activity {
 
     };
 
-    public class NotiftLocationListener implements BDLocationListener {
+    public class NotiftLocationListener extends BDAbstractLocationListener {
 
         @Override
         public void onReceiveLocation(BDLocation location) {
@@ -101,6 +107,7 @@ public class NotifyActivity extends Activity {
     }
 
     public class NotifyLister extends BDNotifyListener {
+        @Override
         public void onNotify(BDLocation mlocation, float distance) {
             mVibrator.vibrate(1000);//振动提醒已到设定位置附近
             Toast.makeText(NotifyActivity.this, "震动提醒", Toast.LENGTH_SHORT).show();

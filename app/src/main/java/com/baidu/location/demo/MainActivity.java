@@ -56,7 +56,7 @@ public class MainActivity extends Activity {
                 permissions.add(Manifest.permission.ACCESS_COARSE_LOCATION);
             }
             /*
-			 * 读写权限和电话状态权限非必要权限(建议授予)只会申请一次，用户同意或者禁止，只会弹一次
+             * 读写权限和电话状态权限非必要权限(建议授予)只会申请一次，用户同意或者禁止，只会弹一次
 			 */
             // 读写权限
             if (addPermission(permissions, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
@@ -129,6 +129,9 @@ public class MainActivity extends Activity {
                         TargetClass = IsHotWifiActivity.class;
                         break;
                     case 7:
+                        TargetClass = ForegroundActivity.class;
+                        break;
+                    case 8:
                         TargetClass = QuestActivity.class;
                         break;
                     default:
@@ -153,6 +156,7 @@ public class MainActivity extends Activity {
         data.add("位置消息提醒");
         data.add("室内定位功能");
         data.add("判断移动热点");
+        data.add("android 8.0后台定位示例");
         data.add("常见问题说明");
 
 

@@ -13,8 +13,8 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 
 import com.baidu.baidulocationdemo.R;
+import com.baidu.location.BDAbstractLocationListener;
 import com.baidu.location.BDLocation;
-import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.baidu.mapapi.map.BaiduMap;
@@ -72,6 +72,7 @@ public class IndoorLocationActivity extends Activity {
         mCurrentMode = LocationMode.NORMAL;
         requestLocButton.setText("普通");
         OnClickListener btnClickListener = new OnClickListener() {
+            @Override
             public void onClick(View v) {
                 switch (mCurrentMode) {
                     case NORMAL:
@@ -143,7 +144,7 @@ public class IndoorLocationActivity extends Activity {
     /**
      * 定位SDK监听函数
      */
-    public class MyLocationListenner implements BDLocationListener {
+    public class MyLocationListenner extends BDAbstractLocationListener {
 
         private String lastFloor = null;
 
@@ -202,9 +203,7 @@ public class IndoorLocationActivity extends Activity {
             }
         }
 
-        public void onReceivePoi(BDLocation poiLocation) {
-        }
-
+        @Override
         public void onConnectHotSpotMessage(String s, int i) {
 
         }
